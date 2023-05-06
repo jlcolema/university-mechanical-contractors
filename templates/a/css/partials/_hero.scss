@@ -1,0 +1,34 @@
+
+/*-------------------------------------------
+	Hero
+-------------------------------------------*/
+
+
+#hero {
+
+	@include vertical-gradient($gray-light, $gray);
+
+	.wrap {
+
+		// This block expands the full width of screen up to 1133px.
+
+		max-width: 1133px;
+		padding: 0;
+		
+	}
+	
+}
+
+		.hero {
+		
+			img {
+
+				display: block;
+
+				/* @todo Need to choose a larger starting image (maybe 420px) */
+
+				width: 100%;
+
+			}
+		
+		}

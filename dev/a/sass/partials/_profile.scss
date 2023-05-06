@@ -1,0 +1,71 @@
+
+/*-------------------------------------------
+	Staff Member Profile
+-------------------------------------------*/
+
+
+#profile {
+	
+	.wrap {
+
+		.single-people & {
+
+			padding: 0;
+
+		}
+
+	}
+	
+}
+
+		.hero {
+		
+			img {
+
+				display: block;
+
+			}
+		
+		}
+
+		.profile {
+
+			padding: 30px;
+			background: $gray-lighter;
+
+			#people & {
+			
+				position: relative;
+				
+			}
+
+			.name {
+				
+				@include font-size(21);
+				line-height: (28/21) + em;
+				@include din-bold;
+				color: $slate;
+				
+			}
+			
+			.position { color: $slate-light; }
+			
+			.bio {
+				
+				margin: 20px 0 0 0;
+				
+			}
+			
+			.back-to {
+
+				margin: 25px 0 0 0;
+
+				a {
+				
+					&:hover {}
+					
+				}
+				
+			}
+		
+		}

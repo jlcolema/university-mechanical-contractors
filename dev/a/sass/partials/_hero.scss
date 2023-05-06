@@ -1,0 +1,48 @@
+
+/*-------------------------------------------
+	Hero
+-------------------------------------------*/
+
+
+#hero {
+
+	@include vertical-gradient($gray-light, $gray);
+
+	.wrap {
+
+		// This block expands the full width of screen up to 1133px.
+
+		max-width: 1133px;
+		padding: 0;
+
+		.ie-lt9 & {
+		
+			max-width: none;
+			width: 1133px;
+		
+		}
+
+	}
+	
+}
+
+		.hero {
+
+			.single-post &,
+			.single-news & {
+
+				@media screen and (min-width: 680px) {
+
+					padding-left: 34.598411%;
+
+				}
+
+			}
+
+			img {
+
+				display: block;
+
+			}
+		
+		}

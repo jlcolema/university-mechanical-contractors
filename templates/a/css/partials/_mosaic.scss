@@ -1,0 +1,360 @@
+
+/*-------------------------------------------
+	Mosaic
+-------------------------------------------*/
+
+
+#mosaic {
+
+	@include vertical-gradient($gray-light, $gray);
+
+	.wrap {
+
+		position: relative;
+
+		/* @todo Turn this back on once mosaic is solved at larger size. */
+
+		max-width: 1143px;
+		padding: 0;
+
+	}
+
+}
+
+		.ether-grid,
+		.people {
+
+			@include group;
+
+		}
+
+			.ether-slider-window {}
+		
+				.ether-cols {}
+
+					.ether-col-group {}
+		
+						.ether-col {
+
+							float: none;
+							width: 100%;
+
+							// 2 Columns
+
+							@media screen and (min-width: 480px) {
+							
+								width: 50%;
+							
+							}
+
+							// 3 Columns
+
+							@media screen and (min-width: 580px) {
+							
+								width: 33.33333%;
+							
+							}
+
+							// 4 Columns
+
+							@media screen and (min-width: 680px) {
+							
+								width: 25%;
+							
+							}
+
+							// 5 Columns
+
+							@media screen and (min-width: 900px) {
+							
+								width: 20%;
+							
+							}
+
+							// 8 Columns
+
+							@media screen and (min-width: 1000px) {
+							
+								width: 12.5%;
+							
+							}
+
+						}
+
+							.person {
+				
+								// float: left;
+								// width: 50%;
+
+								a {
+				
+									position: relative;
+									display: block;
+									color: $gray-lighter;
+				
+									&:hover {
+										
+										.overlay { opacity: 1; }
+										
+									}
+
+								}
+				
+									img {
+									
+										display: block;
+										
+									}
+				
+									.overlay {
+				
+										position: absolute;
+										left: 0;
+										top: 0;
+										width: 100%;
+										height: 100%;
+										padding: 18px 18px 18px 18px;
+										background: rgba($orange, 0.80);
+										opacity: 0;
+										z-index: 5;
+									
+									}
+							
+										.name {
+				
+											margin: 0 0 5px 0;
+											@include font-size(16);
+											line-height: (18/16) + em;
+											@include din-bold;
+							
+										}
+										
+										.position {
+											
+											@include font-size(14);
+											line-height: (18/14) + em;
+											
+										}
+								
+							}
+
+			// Controls
+
+			.ether-ctrl-wrap {}
+			
+				.ether-ctrl-car {}
+				
+					.ether-ctrl {
+
+						position: absolute;
+						top: 50%;
+						width: 40px;
+						height: 40px;
+						margin-top: -20px;
+						background: rgba($slate-light, 0.50) url(carousel-nav.png);
+						cursor: pointer;
+						z-index: 99999;
+
+						&.ether-prev {
+							
+							left: 0;
+							@include border-radius(0 50% 50% 0);
+							
+						}
+						
+						&.ether-next {
+							
+							right: 0;
+							@include border-radius(50% 0 0 50%);
+							background-position: -40px 0;
+							
+						}
+					
+					}
+
+
+
+/* @todo Need to Organize Mosaic Styles */
+
+
+/* ETHER COLUMNS */
+
+
+
+.ether-cols {
+
+	// change global column spacing here
+
+	margin: 15px -15px;
+
+	&:after {
+	
+		display: block;
+		visibility: hidden;
+		content: ".";
+		height: 0;
+		line-height: 0;
+		font-size: 0;
+		clear: both;
+		
+	}
+
+	& + * { margin-top: 0px !important; }
+
+}
+
+* + .ether-cols { margin-top: 0px; }
+
+.ether-cols + .ether-cols {
+
+	// Change global column spacing here
+	
+	margin-top: -15px;
+	
+}
+
+.ether-col > .ether-cols:first-child {
+
+	// change global column spacing here
+
+	margin-top: -15px !important;
+	
+}
+ 
+.ether-cols.ether-spacing-0 { margin: 0; }
+
+.ether-col {
+
+	position: relative;
+	display: inline-block;
+	margin: 0px -4px 0px 0px;
+
+	// Change global column spacing here
+
+	padding: 15px;
+	vertical-align: top;
+
+}
+
+.ether-grid-height-constrain .ether-col { overflow: hidden; }
+
+.ether-spacing-0 .ether-col { padding: 0; }
+
+.ether-col > *:first-child { margin-top: 0 !important; }
+.ether-col > *:last-child,
+.ether-col > *.ether-last-child { margin-bottom: 0 !important;  }
+
+
+// .ether-cols-1 > .ether-col,
+// .ether-cols-1 > * > .ether-col { width: 100%; }
+// .ether-cols-2 > .ether-col,
+// .ether-cols-2 > * > .ether-col { width: 50%;}
+// .ether-cols-3 > .ether-col,
+// .ether-cols-3 > * > .ether-col { width: 33.33%;}
+// .ether-cols-4 > .ether-col,
+// .ether-cols-4 > * > .ether-col { width: 25%; }
+// .ether-cols-5 > .ether-col,
+// .ether-cols-5 > * > .ether-col { width: 20%; }
+// .ether-cols-6 > .ether-col,
+// .ether-cols-6 > * > .ether-col { width: 16.66%; }
+// .ether-cols-8 > .ether-col,
+// .ether-cols-8 > * > .ether-col { width: 12.5%; }
+// .ether-cols-10 > .ether-col,
+// .ether-cols-10 > * > .ether-col { width: 10%; }
+
+
+
+/*m*/
+
+@media screen and (max-width: 780px) {
+	
+	// .ether-cols .ether-col { width: 100% !important; }
+	
+	// .ether-cols-3 .ether-col,
+	// .ether-cols-4 .ether-col,
+	// .ether-cols-5 .ether-col,
+	// .ether-cols-6 .ether-col,
+	// .ether-cols-8 .ether-col,
+	// .ether-cols-10 .ether-col { width: 50% !important; }
+}
+
+@media screen and (max-width: 580px) {
+	
+	// .ether-cols .ether-col { width: 100% !important; }
+}
+/*	***GRIDSLIDER NOTES***
+	
+	ether-GRID - element uses gridslider with slider turned off (grid only)
+	ether-SLIDER - element uses gridslider with slider turned on
+	ether-COL-GROUP - cols * rows visible on screen
+	ether-COL - columns within ether-GRID behave a little bit differently from non-grid columns: 
+		-float left instead of display: inline-block for cols positioning
+		-reset margin back to 0
+	
+	FIRST-CHILD within ether-COL - .ether-COL within .ether-GRID will always consists of only one item. Reset general positioning for that item to ensure bulletproof compatibility of that item with ether-GRID
+	
+	ether-SLIDER-WINDOW - top and bottom padding to prevent margin collapse in some cases
+*/
+
+.ether-grid { position: relative; }
+.ether-grid .ether-cols { position: relative; margin-top: -15px; margin-bottom: -15px;}
+.ether-grid .ether-col-group { position: absolute; top: 0px; left: 0px; width: 100%; z-index: -1; visibility: hidden; }
+
+.ether-grid .ether-spacing-0.ether-cols { margin: 0; }
+.ether-grid .ether-spacing-0 .ether-col { padding: 0;}
+
+
+.ether-grid .ether-col { margin: 0; float: left; }
+.ether-grid .ether-first-col { clear: left; }
+
+.ether-grid .ether-col > :first-child { margin: 0 !important; display: block !important; float: none !important; /*max-height: 100% !important;*/}
+
+
+.ether-slider-window {
+
+	position: relative;
+	
+}
+
+/* ie7 fix */
+.ether-ie7-grid-fix .ether-cols { float: left; width: 100%; position: relative;}
+.ether-ie7-grid-fix .ether-col { padding: 0 !important; margin-right: -1px; position: relative;}
+.ether-ie7-grid-fix .ether-col > *:first-child { margin: 15px !important; }
+.ether-ie7-grid-fix .ether-spacing-0 .ether-col { padding: 0px !important; }
+.ether-ie7-grid-fix .ether-spacing-0 .ether-col > *:first-child { margin: 0 !important; }
+
+
+
+
+.ether-image-stretch-mode-x img { width: 100% !important; height: auto !important; margin: 0 auto !important; display: block !important; max-width: 100% !important; max-height: none !important;}
+.ether-image-stretch-mode-y img { height: 100% !important; width: auto !important; margin: 0 auto !important; display: block !important; max-height: 100% !important; max-width: none !important;}
+.ether-image-stretch-mode-fit img { width: auto !important; height: auto !important; margin: 0 auto !important; display: block !important; max-width: 100% !important; max-height: 100% !important;}
+/*.ether-image-stretch-mode-fill img { width: 100% !important; height: auto !important; margin: 0 auto !important; display: block !important; max-width: none !important; max-height: none !important;}*/
+.ether-image-stretch-mode-fill img { max-width: none !important; max-height: none !important;}
+
+.ether-grid-height-auto.ether-image-stretch-mode-y img,
+.ether-grid-height-auto.ether-image-stretch-mode-fit img,
+.ether-grid-height-auto.ether-image-stretch-mode-fill img { max-height: none !important; height: auto !important; width: 100% !important;}
+
+
+// .ether-load-overlay { background: #ffffff url(ajax-loader.gif) 50% 50% no-repeat; width: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 99; min-height: 20px; }
+
+.ether-hide-grid-cell-overflow { overflow: hidden; max-height: 100%;}
+
+
+
+/*
+	default alignment for buttons and images and perhaps something else, too
+*/
+.ether-aligncenter { margin-left: auto; margin-right: auto; display: block; float: none; }
+.ether-alignleft { float: left; margin-right: 30px !important; margin-left: 0 !important; margin-top: 0px;}
+.ether-alignright { float: right; margin-left: 30px !important; margin-right: 0 !important; margin-top: 0px;}
+
+.ether-text-alignleft { text-align: left; }
+.ether-text-alignright { text-align: right; }
+.ether-text-aligncenter { text-align: center; }
+
+@media screen and (max-width: 580px) {
+	.ether-alignright {  margin-left: 0px; }
+	.ether-alignleft {  margin-right: 0px; }
+}

@@ -1,0 +1,177 @@
+
+/*-------------------------------------------
+	Carousel
+-------------------------------------------*/
+
+
+#carousel {
+
+	@include vertical-gradient($gray-light, $gray);
+	
+	.wrap {
+		
+		// This block expands the full width of screen up to 1133px.
+
+		max-width: 1133px;
+		padding: 0;
+
+	}
+	
+}
+
+		.flexslider {
+			
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+		}
+
+			.slides {
+
+				@include group;
+
+				html[xmlns] & { display: block; }
+
+				* html & { height: 1%; }
+
+				li {
+
+					display: none;
+
+					// Hide the slides before the JavaScript is loaded; also avoids image jumping.
+
+					-webkit-backface-visibility: hidden;
+
+					// If no JavaScript is available, display just the first slide.
+
+					&:first-child {
+					
+						.no-js & { display: block; }
+					
+					}
+					
+				}
+
+					img {
+
+						display: block;
+
+						/* @todo Need to choose a larger starting image (maybe 420px) */
+
+						width: 100%;
+						
+					}
+			
+			}
+
+			.flex-control-paging {
+
+				position: absolute;
+				left: 0;
+				bottom: 10px;
+				width: 100%;
+				text-align: center;
+				z-index: 5;
+
+				@media screen and (min-width: 680px) {
+				
+					width: auto;
+					padding: 0 0 0 25px;
+
+				}
+
+				li {
+
+					display: inline-block;
+					margin: 5px;
+					@include hide-text;
+
+				}
+				
+					a {
+
+						display: block;
+						width: 10px;
+						height: 10px;
+						background: url(pager.png);
+
+						@include retina {
+						
+							background-size: 20px 10px;
+							background-image: url(pager@2x.png);
+						
+						}
+
+						&:hover {}
+					
+						&.flex-active {
+							
+							background-position: -10px 0;
+							
+						}
+						
+					}
+				
+			}
+
+			.flex-direction-nav {
+
+				li {
+
+					position: absolute;
+					top: 50%;
+					margin-top: -20px;
+					@include hide-text;
+					z-index: 5;
+
+					// Previous Slide
+
+					&:first-child {
+					
+						left: 0;
+
+					}
+
+					// Next Slide
+
+					&:last-child {
+					
+						right: 0;
+					
+					}
+
+				}
+				
+					a {
+
+						display: block;
+						width: 40px;
+						height: 40px;
+						background: rgba($slate-light, 0.50) url(carousel-nav.png);
+
+						@include retina {
+						
+							background-size: 80px 80px;
+							background-image: url(carousel-nav@2x.png);
+						
+						}
+
+						&:hover {}
+					
+						&.flex-prev {
+							
+							@include border-radius(0 50% 50% 0);
+							
+						}
+						
+						&.flex-next {
+							
+							@include border-radius(50% 0 0 50%);
+							background-position: -40px 0;
+							
+						}
+						
+					}
+
+			}

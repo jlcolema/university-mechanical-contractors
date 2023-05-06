@@ -1,0 +1,18 @@
+/*-------------------------------------------
+	Enhanced
+-------------------------------------------*/
+#nav .toggle {
+  display: block; }
+  @media screen and (min-width: 910px) {
+    #nav .toggle {
+      display: none; } }
+  .ie-lt9 #nav .toggle {
+    display: none; }
+#nav ul {
+  display: none; }
+  @media screen and (min-width: 910px) {
+    #nav ul {
+      /* @todo Not critical, but see if there is a way to not have to use !important */
+      display: block !important; } }
+  .ie-lt9 #nav ul {
+    display: block !important; }

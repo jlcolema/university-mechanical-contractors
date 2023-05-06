@@ -1,0 +1,877 @@
+
+/*-------------------------------------------
+	Main
+-------------------------------------------*/
+
+#main {
+	
+	padding: 0 0 30px 0;
+
+	@media screen and (min-width: 680px) {
+
+		// Once layout is displayed with a,
+		// sidebar padding control is then moved
+		// over to the .wrap element (located
+		// in the "layouts" partial).
+
+		padding: 0;
+
+	}
+
+	.ie-lt9 & {
+	
+		padding: 0;
+	
+	}
+
+	ol {
+
+		margin: 0 0 15px 0;
+		padding: 0 0 0 17px;
+
+		li {
+			
+			list-style-type: decimal;
+			list-style-position: outside;
+			
+		}
+		
+	}
+
+	ul {
+
+		margin: 0 0 15px 0;
+		padding: 0 0 0 17px;
+
+		li {
+			
+			list-style-type: square;
+			list-style-position: outside;
+			
+		}
+		
+	}
+
+}
+
+
+	/* Page Title */
+
+
+	.page-title {
+	
+		#home & {
+
+			// On the home page, this is display on its
+			// own line, pushing the #main and #secondary
+			// sections below it.
+
+			max-width: 65.40158870256%;
+		
+		}
+
+		#projects & {
+		
+			display: none;
+			
+		}
+
+	}
+
+
+	/* List of Projects */
+
+	
+	#project-list {
+
+		position: relative;
+		text-align: justify;
+		@include placeholder;
+
+	}
+
+		// Message when there is nothing to display.
+
+		.fail_element {
+
+			display: none;
+			opacity: 0;
+			@include transition(all 250ms ease-in-out);
+
+			.fail & {
+
+				display: block;
+				width: 100%;
+				text-align: center;
+				opacity: 1;
+
+				em {
+				
+					display: block;
+					margin: 100px 0;
+					
+				}
+
+			}
+
+		}
+
+		/* Individual Project */
+
+		.project {
+
+			display: none;
+			position: relative;
+			margin: 0 0 35px 0;
+			text-align: left;
+			opacity: 0;
+
+			// 2 Column
+
+			@media screen and (min-width: 460px) {
+			
+				width: 46.25%;
+				vertical-align: top;
+			
+			}
+
+			// 3 Column
+			
+			@media screen and (min-width: 800px) {
+			
+				width: 30.80317740512%;
+			
+			}
+
+			.ie-lt9 & {
+			
+				width: 30.80317740512%;
+				vertical-align: top;
+
+			}
+
+			&:last-of-type { margin: 0; }
+
+			a {
+
+				color: $slate;
+
+				&:hover {}
+				
+			}
+
+				img {
+
+					display: block;
+					margin: 0 0 10px 0;
+					
+				}
+
+				.title {
+					
+					@include font-size(18);
+					line-height: (24/18) + em;
+					@include din-regular;
+					
+				}
+
+		}
+
+		// Special spacer to help with justified elements
+
+		.gap {
+		
+			// 2 Column
+
+			@media screen and (min-width: 460px) {
+
+				display: inline-block;
+				width: 46.25%;
+			
+			}
+
+			// 3 Column
+			
+			@media screen and (min-width: 800px) {
+			
+				width: 30.80317740512%;
+			
+			}
+
+			.ie-lt9 & {
+			
+				display: inline-block;
+				width: 30.80317740512%;
+			
+			}
+
+		}
+
+	/* Project Description */
+
+
+	.description {
+
+		margin: 0 0 15px 0;
+
+		h2 {
+
+			margin: 0 0 3px 0;
+			@include font-size(14);
+			line-height: (21/14) + em;
+			@include din-regular;
+			color: $orange;
+			
+		}
+	
+	}
+
+
+	/* Project Challenges */
+
+
+	.challenges {
+
+		h2 {
+			
+			margin: 0 0 3px 0;
+			@include font-size(14);
+			line-height: (21/14) + em;
+			@include din-regular;
+			color: $orange;
+			
+		}
+
+		ul {
+
+			padding: 0 0 0 18px;
+			
+		}
+		
+			li {
+
+				@include font-size(14);
+				line-height: (21/14) + em;
+				list-style-type: disc;
+				list-style-position: outside;
+				
+			}
+	
+	}
+
+
+	/* Featured Project */
+
+
+	.featured {
+
+		margin: 30px 0 0 0;
+
+		.section-header {
+
+			position: relative;
+			margin: 0 0 20px 0;
+			@include vertical-gradient($orange-lighter, $orange-light);
+
+			h2 {
+
+				height: 40px;
+				padding: 6px 0 0 50px;
+				@include font-size(16);
+				line-height: (28/16) + em;
+				text-transform: uppercase;
+				@include din-medium;
+				color: $gray-lighter;
+				background: url(../img/featured-project.svg) 10px center no-repeat;
+
+				.ie-lt9 & {
+				
+					background: url(../img/featured-project.png) 10px center no-repeat;
+				
+				}
+
+				// Line length is too long, so hide an unimportant portion of it
+
+				span {
+					
+					display: none;
+
+					@media screen and (min-width: 540px) and (max-width: 679px), (min-width: 840px) {
+					
+						display: inline;
+						
+					}
+
+				}
+
+			}
+			
+			.more {
+
+				position: absolute;
+				right: 0;
+				top: 0;
+				@include font-size(12);
+				line-height: (17/12) + em;
+				text-transform: uppercase;
+				text-align: center;
+				@include din-medium;
+				@include hide-text;
+
+				@media screen and (min-width: 1000px) {
+
+					border-left: 1px solid $gray-lighter;
+					text-indent: 0;
+					white-space: normal;
+					overflow: auto;
+
+				}
+
+				a {
+
+					display: block;
+					width: 30px;
+					height: 40px;
+					color: $gray-lighter;
+					background: url(go-to.svg);
+
+					@media screen and (min-width: 1000px) {
+					
+						width: 100px;
+						padding: 11px 0 0 0;
+						background: none;
+					
+					}
+
+					&:hover {}
+					
+				}
+				
+			}
+	
+		}
+
+		.featured-project {
+
+			@media screen and (min-width: 480px) {
+			
+				text-align: justify;
+				@include placeholder;
+			
+			}
+
+			.ie-lt9 & {
+			
+				text-align: justify;
+				@include placeholder;
+			
+			}
+
+			img {
+
+				/* @todo Need to choose a larger starting image (maybe 420px) */
+				
+				width: 100%;
+				margin: 0 0 15px 0;
+
+				@media screen and (min-width: 480px) {
+
+					position: relative;
+					top: 5px;
+					display: inline-block;
+					width: 31.03913630229%;
+					margin: 0;
+					text-align: left;
+					vertical-align: top;
+				
+				}
+
+				.ie-lt9 & {
+
+					position: relative;
+					top: 5px;
+					display: inline-block;
+					width: 31.03913630229%;
+					margin: 0;
+					text-align: left;
+					vertical-align: top;
+				
+				}
+
+			}
+
+			.copy {
+
+				@media screen and (min-width: 480px) {
+				
+					display: inline-block;
+					width: 66.12685560054%;
+					text-align: left;
+					vertical-align: top;
+				
+				}
+
+				.ie-lt9 & {
+				
+					display: inline-block;
+					width: 66.12685560054%;
+					text-align: left;
+					vertical-align: top;
+				
+				}
+
+			}
+			
+				h1 {
+	
+					@include font-size(21);
+					line-height: (28/21) + em;
+					@include din-bold;
+	
+					a {
+	
+						color: $slate;
+	
+						&:hover {}
+						
+					}
+					
+				}
+	
+				.excerpt {
+					
+					@include font-size(12);
+					line-height: (17/12) + em;
+					
+				}
+		
+		}
+
+	}
+
+	form {
+
+		margin: 25px 0 0 0;
+
+		ol,
+		ul {
+
+			margin: 0 !important;
+			padding: 0 !important;
+			
+		}
+
+			li {
+
+				list-style: none !important;
+				margin: 0 0 20px 0;
+			
+			}
+
+				label {}
+				
+				input {
+					
+					@media screen and (min-width: 680px) {
+					
+						width: 260px;
+					
+					}
+
+					.ie-lt9 & {
+					
+						width: 260px;
+					
+					}
+
+				}
+				
+				textarea {}
+
+				#submit,
+				.button,
+				button {
+					
+					@media screen and (min-width: 680px) {
+					
+						width: 260px;
+					
+					}
+
+					.ie-lt9 & {
+					
+						width: 260px;
+					
+					}
+
+				}
+
+	}
+
+	
+	/* Article Summary */
+
+
+	.summary {
+	
+		#main & {
+
+			margin: 0 0 30px 0;
+			padding: 0 0 30px 0;
+			border-bottom: 1px solid rgb(238, 238, 238);
+
+			&:last-of-type {
+
+				margin: 0 0 25px 0;
+				padding: 0;
+				border: none;
+			
+			}
+
+			.featured-image {
+			
+				margin: 0 0 20px 0;
+			
+				img { display: block; }
+			
+			}
+		
+			h1 {
+
+				@include font-size(18);
+				line-height: (24/18) + em;
+				@include din-regular;
+
+				a {
+				
+					color: $orange;
+				
+					&:hover {}
+					
+				}
+				
+			}
+
+			footer {
+
+				margin: 0 0 15px 0;
+				@include group;
+
+				time {
+					
+					float: left;
+					@include font-size(12);
+					line-height: (17/12) + em;
+					color: $slate;
+					
+				}
+				
+				.author {
+					
+					float: right;
+					@include font-size(12);
+					line-height: (17/12) + em;
+					color: $slate;
+					
+				}
+			
+			}
+
+			.more {
+
+				margin: 15px 0 0 0;
+
+				a {
+
+					color: $orange;
+
+					&:hover {}
+					
+				}
+				
+			}
+
+		}
+
+	}
+
+
+	/* Individual Post */
+
+
+	.hentry {
+
+		margin: 0 0 30px 0;
+
+		h1 {
+
+			@include font-size(18);
+			line-height: (24/18) + em;
+			@include din-regular;
+			color: $orange;
+
+			a {
+			
+				color: $orange;
+			
+				&:hover {}
+				
+			}
+			
+		}
+
+		footer {
+
+			margin: 0 0 15px 0;
+			@include group;
+
+			time {
+				
+				float: left;
+				@include font-size(12);
+				line-height: (17/12) + em;
+				color: $slate;
+				
+			}
+			
+			.author {
+				
+				float: right;
+				@include font-size(12);
+				line-height: (17/12) + em;
+				color: $slate;
+				
+			}
+		
+		}
+	
+	}
+
+	/* Share Bar */
+
+	#share {
+
+		margin: 0 0 20px 0;
+		@include vertical-gradient($slate-light, $slate);
+		@include group;
+
+		h3 {
+			
+			float: left;
+			height: 40px;
+			padding: 6px 18px 0 18px;
+			@include font-size(16);
+			line-height: (28/16) + em;
+			text-transform: uppercase;
+			@include din-medium;
+			color: $gray-lighter;
+			
+		}
+
+		ul {
+			
+			float: left;
+			height: 40px;
+			margin: 0;
+			padding: 5px 0 0 0;
+			@include group;
+
+		}
+		
+			li {
+				
+				float: left;
+				margin: 0 10px 0 0;
+				list-style: none;
+				@include hide-text;
+
+			}
+			
+				a {
+
+					display: block;
+					width: 30px;
+					height: 30px;
+					background: url(../img/share.svg);
+
+					.ie-lt9 & {
+					
+						background: url(../img/share.png);
+					
+					}
+
+					&:hover {}
+					
+				}
+
+			.facebook {}
+			
+			.twitter {
+				
+				a {
+				
+					background-position: -30px 0;
+				
+				}
+				
+			}
+			
+			.google {
+				
+				a {
+				
+					background-position: -60px 0;
+				
+				}
+				
+			}
+			
+			.pinterest {
+				
+				a {
+				
+					background-position: -90px 0;
+				
+				}
+				
+			}
+			
+			.email {
+				
+				a {
+				
+					background-position: -120px 0;
+				
+				}
+				
+			}
+		
+	}
+
+	/* Comments */
+
+	#comments {
+	
+		h3 {
+
+			height: 40px;
+			padding: 6px 18px 0 18px;
+			@include font-size(16);
+			line-height: (28/16) + em;
+			text-transform: uppercase;
+			@include din-medium;
+			color: $gray-lighter;
+			@include vertical-gradient($orange-lighter, $orange-light);		
+
+		}
+
+	}
+
+	/* Address */
+
+	.vcard {
+	
+		#main & {
+
+			margin: 0 0 25px 0;
+
+			h2 {
+				
+				@include font-size(14);
+				line-height: (21/14) + em;
+				@include din-regular;
+				color: $orange;
+				
+			}
+
+			.adr {
+			
+				@include font-size(14);
+				line-height: (21/14) + em;
+
+			}
+
+				.org {
+				
+					@include font-size(14);
+					line-height: (21/14) + em;
+				
+				}
+			
+				.street-address {
+				
+					@include font-size(14);
+					line-height: (21/14) + em;
+				
+				}
+
+				.locality {
+				
+					@include font-size(14);
+					line-height: (21/14) + em;
+				
+				}
+
+				.region {
+				
+					@include font-size(14);
+					line-height: (21/14) + em;
+
+				}
+
+				.postal-code {
+				
+					@include font-size(14);
+					line-height: (21/14) + em;
+
+				}
+		
+		}
+	
+	}
+
+	/* Current Openings */
+
+	.openings {
+
+		margin: 20px 0 0 0;
+
+		h3 {
+
+			margin: 0 0 9px 0;
+			@include font-size(17);
+			line-height: (21/17) + em;
+			@include din-medium;
+			color: $orange;
+			
+		}
+
+		ul {
+
+			margin: 0 !important;
+			padding: 0 !important;
+			border-top: 1px solid $gray;
+			
+		}
+		
+			li {
+
+				list-style: none !important;
+				@include font-size(12);
+				line-height: (14/12) + em;
+				text-transform: uppercase;
+				border-bottom: 1px solid $gray;
+				
+			}
+			
+				a {
+
+					display: block;
+					color: $slate;
+					padding: 9px 12px 9px 12px;
+
+					&:hover {}
+					
+				}
+	
+	}

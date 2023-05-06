@@ -1,0 +1,55 @@
+
+/*-------------------------------------------
+	Enhanced
+-------------------------------------------*/
+
+// Styles that load when JavaScript is enabled.
+
+
+
+
+
+// Primary Navigation
+
+#nav {
+
+	.toggle {
+
+		display: block;
+
+		@media screen and (min-width: 910px) {
+
+			display: none;
+		
+		}
+
+		.ie-lt9 & {
+		
+			display: none;
+		
+		}
+
+	}
+	
+	ul {
+
+		display: none;
+
+		@media screen and (min-width: 910px) {
+
+			/* @todo Not critical, but see if there is a way to not have to use !important */
+
+			display: block !important;
+		
+		}
+
+		.ie-lt9 & {
+		
+			display: block !important;
+		
+		}
+
+	}
+	
+}
+

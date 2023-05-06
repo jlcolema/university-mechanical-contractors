@@ -1,0 +1,49 @@
+
+/*-------------------------------------------
+	Enhanced
+-------------------------------------------*/
+
+// Styles that load when JavaScript is enabled.
+
+
+// Primary Navigation
+
+#nav {
+
+	.toggle {
+
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		width: 30px;
+		height: 30px;
+		background: url(nav-toggle.svg);
+		@include hide-text;
+		cursor: pointer;
+		z-index: 5;
+
+		@media screen and (min-width: 910px) {
+
+			display: none;
+		
+		}
+		
+	}
+	
+	ul {
+
+		display: none;
+
+		@media screen and (min-width: 910px) {
+
+			/* @todo Not critical, but see if there is a way to not have to use !important */
+
+			display: block !important;
+		
+		}
+		
+	}
+	
+}
+

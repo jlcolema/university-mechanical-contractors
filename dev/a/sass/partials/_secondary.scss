@@ -1,0 +1,786 @@
+
+/*-------------------------------------------
+	Secondary
+-------------------------------------------*/
+
+
+#secondary {}
+
+	/* Secondary Navigation */
+
+	.secondary-nav {
+
+		margin: 0 0 30px 0;
+		border-top: 1px solid $gray;
+
+		@media screen and (min-width: 680px) {
+		
+			border-top: none;
+		
+		}
+
+		.ie-lt9 & {
+		
+			border-top: none;
+		
+		}
+
+		ul {
+			
+			// Primary Navigation
+
+			li {
+
+				// Top level does not need to show
+
+				display: none;
+
+				position: relative;
+				@include font-size(12);
+				line-height: (14/12) + em;
+				text-transform: uppercase;
+
+				a {
+
+					// Top level links do not need to show
+
+					display: none;
+					position: relative;
+					padding: 9px 12px;
+					color: $slate;
+
+					&.hover,
+					&:hover {
+
+						color: $gray-lighter;
+						@include vertical-gradient($orange-lighter, $orange-light);
+
+					}
+					
+				}
+
+				.sub-menu {
+
+					// Secondary level of navigation; content begins
+					// to display
+
+					li {
+
+						display: block;
+						border-bottom: 1px solid $gray;
+
+						&.hover {
+						
+							.toggle {
+							
+								background-position: -20px 0;
+							
+							}
+						
+						}
+
+						.single-news &#menu-item-398,
+						&.current-menu-item {
+						
+							a {
+							
+								color: $gray-lighter;
+								@include vertical-gradient($orange-lighter, $orange-light);
+								
+							}
+
+							.toggle {
+							
+								background-position: -20px 0;
+							
+							}
+
+							&.open {
+							
+								.toggle {
+														
+									background-position: -20px -20px;
+								
+								}
+								
+							}
+
+							.sub-menu {
+							
+								a {
+								
+									color: $slate;
+									background: none;
+
+									&:hover {
+									
+										color: $gray-lighter;
+										@include vertical-gradient($orange-lighter, $orange-light);
+									
+									}
+
+								}
+							
+							}
+
+						}
+
+						&.current-menu-ancestor {
+						
+							a {
+							
+								color: $slate;
+								@include vertical-gradient($gray-light, $gray);
+
+								&:hover {
+								
+									color: $gray-lighter;
+									@include vertical-gradient($orange-lighter, $orange-light);
+									
+								}
+
+							}
+
+							.toggle {
+							
+								&.hover {
+								
+									background-position: 0 -20px !important;
+								
+								}
+							
+							}
+
+							&.hover {
+
+								.toggle {
+								
+									background-position: -20px -20px;
+									
+								}
+								
+							}
+
+							.open {
+							
+							
+							
+							}
+
+							.sub-menu {
+
+								li {
+								
+									&.current-menu-item {
+									
+										a {
+									
+											color: $gray-lighter;
+											@include vertical-gradient($orange-lighter, $orange-light);
+
+										}
+
+									}
+								
+								}
+							
+									a {
+									
+										background: none;
+
+										&:hover {
+										
+											color: $gray-lighter;
+											@include vertical-gradient($orange-lighter, $orange-light);
+										
+										}
+									
+									}
+							
+							}
+
+						}
+
+						// Toggle Behaviors
+
+						&.open {
+						
+							.toggle {
+							
+								background-position: 0 -20px;
+							
+							}
+
+							&.hover {
+							
+								.toggle {
+								
+									background-position: -20px -20px;
+								
+								}
+							
+							}
+
+						}
+
+						a {
+
+							display: block;
+
+							&:hover {}
+							
+						}
+
+						.toggle {
+
+							position: absolute;
+							right: 5px;
+							top: 6px;
+							width: 20px;
+							height: 20px;
+							background: url(../img/secondary-nav-toggle.png);
+							@include hide-text;
+							cursor: pointer;
+							z-index: 5;
+
+						}
+
+						.sub-menu {
+
+							// Initially, these are hidden
+
+							display: none;
+
+							// List of subpages
+
+							border-top: 1px solid $gray;
+
+							li {
+
+								&:last-of-type {
+								
+									border: none;
+
+								}
+
+								a {
+
+									padding: 9px 12px 9px 30px;
+
+									&:hover {}
+									
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			.current-menu-item,
+			.current-menu-ancestor,
+			.single-news & .menu-item-390,
+			.single-post & .menu-item-390 {
+
+				// Primary Navigation container displays if in its own section
+
+				display: block;
+
+			}
+
+			.current-menu-ancestor {
+
+				.current-menu-ancestor {
+
+					&.hover {
+					
+						.toggle {
+						
+							background-position: -20px -20px;
+						
+						}
+
+					}
+
+					&.open {
+					
+						.toggle {
+
+							background-position: 0 0;
+						
+						}
+
+						&.hover {
+						
+							.toggle {
+							
+								background-position: -20px 0;
+							
+							}
+						
+						}
+
+					}
+
+					.toggle {
+					
+						background-position: 0 -20px;
+					
+					}
+
+					.sub-menu { display: block; }
+				
+				}
+			
+			}
+
+			// Menu Stuff
+
+			// Top Level (not shown)
+
+			.current-menu-ancestor {
+
+				// Secondary Nav
+
+				.current-menu-item {
+
+					&.hover {
+					
+						.toggle {
+						
+							// background-position: -20px -20px;
+							
+						}
+					
+					}
+
+					.toggle {
+						
+						background-position: -20px -20px;
+
+						&:hover {
+						
+							background-position: -20px
+						
+						}
+
+					}
+
+					// Submenu
+
+					.sub-menu {
+					
+						display: block;
+					
+					}
+					
+				}
+				
+			}
+
+
+
+			// New Secondary Nav
+
+
+			// Top Level (About Us, etc.)
+
+			.current_page_ancestor {
+				
+				a {
+				
+					&:hover {}
+					
+				}
+
+				// Begin to display secondary nav for this section
+
+				.sub-menu {
+					
+					.menu-item {
+					
+						a {
+						
+							&:hover {}
+							
+						}
+
+						// If there is a subnavigation, display a toggle button
+
+						.toggle {}
+
+						// After the toggle, show the submenu
+
+						.sub-menu {
+							
+							.menu-item {
+							
+								a {
+								
+									&:hover {}
+									
+								}
+							
+							}
+							
+						}
+
+					}
+					
+				}
+				
+			}
+
+
+
+		}
+
+	}
+
+	/* @todo Need a title for this block */
+
+	.meta {
+
+		padding: 30px 0 0 0;
+		border-top: 1px solid $slate;
+
+		@media screen and (min-width: 680px) {
+		
+			padding: 0 30px 0 0;
+			border-top: none;
+			border-right: 1px solid $slate;
+		
+		}
+
+		.ie-lt9 & {
+		
+			padding: 0 30px 0 0;
+			border-top: none;
+			border-right: 1px solid $slate;
+		
+		}
+
+	}
+
+		/* Year Completed */
+	
+		.complete {
+
+			margin: 0 0 25px 0;
+
+			h2 {
+				
+				@include din-bold;
+				
+			}
+		
+		}
+	
+		/* Quick Facts */
+	
+		.facts {
+
+			margin: 0 0 25px 0;
+
+			h3 {
+
+				margin: 0 0 3px 0;
+				@include font-size(14);
+				line-height: (21/14) + em;
+				@include din-regular;
+				color: $orange;
+				
+			}
+			
+			ul {}
+			
+				li {
+
+					margin-bottom: 5px;
+					@include font-size(14);
+					line-height: (21/14) + em;
+					
+					&:last-of-type {
+					
+						margin: 0;
+						
+					}
+					
+				}
+		
+		}
+	
+		/* Features */
+	
+		.features {
+
+			margin: 0 0 30px 0;
+
+			@media screen and (min-width: 680px) {
+			
+				margin: 0;
+			
+			}
+
+			.ie-lt9 & {
+			
+				margin: 0;
+			
+			}
+
+			h3 {
+
+				margin: 0 0 3px 0;
+				@include font-size(14);
+				line-height: (21/14) + em;
+				@include din-regular;
+				color: $orange;
+				
+			}
+			
+			ul {
+				
+				padding: 0 0 0 18px;
+				
+			}
+			
+				li {
+					
+					@include font-size(14);
+					line-height: (21/14) + em;
+					list-style-type: disc;
+					list-style-position: outside;
+					
+				}
+		
+		}
+
+	/* Factoid */
+
+	.factoid {
+
+		margin: 0 0 30px 0;
+		padding: 20px 0 0 0;
+		@include font-size(21);
+		line-height: (28/21) + em;
+		color: $orange;
+		border-top: 1px solid $slate;
+
+		@media screen and (min-width: 680px) {
+
+			padding: 25px 0 25px 20px;
+			border-top: none;
+			border-left: 1px solid $slate;
+		
+		}
+
+		.ie-lt9 & {
+
+			padding: 25px 0 25px 20px;
+			border-top: none;
+			border-left: 1px solid $slate;
+		
+		}
+
+		p {}
+
+	}
+
+	/* Back to Previous Page */
+
+	.back-to {
+
+		margin: 0 0 30px 0;
+		@include font-size(12);
+		line-height: (14/12) + em;
+		text-transform: uppercase;
+
+		#project &,
+		.single-projects & {
+
+			@media screen and (min-width: 680px) {
+
+				margin: 30px 0 0 0;
+
+			}
+
+		}
+
+		.ie-lt9 #project &,
+		.ie-lt9 .single-projects & {
+
+			margin: 30px 0 0 0;
+
+		}
+
+		#people & {
+		
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			margin: 0;
+			@include hide-text;
+			z-index: 5;
+
+		}
+
+		a {
+
+			position: relative;
+			display: block;
+			height: 40px;
+			padding: 13px 40px 0 10px;
+			color: $gray-lighter;
+			@include vertical-gradient($orange-lighter, $orange-light);
+
+			@media screen and (min-width: 680px) {
+
+				#project &,
+				.single-projects & {
+
+					width: 260px;
+
+				}
+
+			}
+
+			.ie-lt9 #project &,
+			.ie-lt9 .single-projects & {
+
+				width: 260px;
+
+			}
+
+			#people & {
+			
+				width: 30px;
+				height: 30px;
+				padding: 0;
+				@include border-radius(50%);
+				background: $gray url(../img/close.png) center center no-repeat;
+
+				@include retina {
+				
+					background-size: 30px 30px;
+					background-image: url(../img/close@2x.png);
+				
+				}
+
+			}
+
+			&:hover {}
+		
+		}
+
+			span {
+				
+				display: block;
+				position: absolute;
+				right: -3px;
+				top: -3px;
+				width: 30px;
+				height: 40px;
+				background: url(../img/back-to.png);
+				@include hide-text;
+
+				#people & {
+				
+					display: none;
+					
+				}
+
+			}
+
+	}
+
+	/* Contacts */
+
+	.contacts {
+
+		margin-top: 5px;
+		padding: 25px 0 0 0;
+		border-top: 1px solid $slate;
+
+		@media screen and (min-width: 680px) {
+		
+			margin: 0;
+			padding: 0 0 0 30px;
+			border-top: none;
+			border-left: 1px solid $slate;
+
+		}
+
+		.ie-lt9 & {
+		
+			margin: 0;
+			padding: 0 0 0 30px;
+			border-top: none;
+			border-left: 1px solid $slate;
+
+		}
+
+		ul {}
+		
+			li {
+
+				margin: 0 0 25px 0;
+				@include font-size(14);
+				line-height: (21/14) + em;
+
+				&:last-of-type { margin: 0 0 30px 0; }
+
+			}
+			
+				strong {
+					
+					display: block;
+					margin: 0 0 3px 0;
+					@include font-size(14);
+					line-height: (21/14) + em;
+					@include din-regular;
+					color: $orange;
+					
+				}
+
+				.vcard {}
+
+					.adr {
+					
+						@include font-size(14);
+						line-height: (21/14) + em;
+
+					}
+					
+						.street-address {
+						
+							@include font-size(14);
+							line-height: (21/14) + em;
+						
+						}
+
+						.locality {
+						
+							@include font-size(14);
+							line-height: (21/14) + em;
+						
+						}
+
+						.region {
+						
+							@include font-size(14);
+							line-height: (21/14) + em;
+
+						}
+
+						.postal-code {
+						
+							@include font-size(14);
+							line-height: (21/14) + em;
+
+						}
+
+	}

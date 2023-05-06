@@ -1,0 +1,489 @@
+
+//-------------------------------------------
+//	Colors
+//-------------------------------------------
+
+
+// Grayscale
+
+
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+
+
+// rgb(238, 238, 238);
+
+// Blue
+
+
+$blue: rgb(47, 88, 167);
+
+
+// Orange (dark to light)
+
+
+$orange: rgb(211, 84, 0);
+$orange-light: rgb(230, 126, 34);
+$orange-lighter: rgb(240, 136, 44);
+
+
+// Slate (dark to light)
+
+
+$slate: rgb(107, 120, 121);
+$slate-light: rgb(127, 140, 141);
+$slate-lighter: rgb(149, 165, 166);
+
+
+// Gray
+
+
+$gray: rgb(205, 210, 210);
+$gray-light: rgb(220, 225, 225);
+$gray-lighter: rgb(240, 245, 245);
+
+
+//-------------------------------------------
+//	Sizes
+//-------------------------------------------
+
+
+// $base: 12px;
+// $base-sm: $base/2;
+// $base-med: $base * 2;
+// $base-lg: $base * 3;
+// $base-xl: $base * 4;
+
+// $base-font-size: 14px;
+// $base-font-rem: 1.4rem;
+// $base-line-height: $base-med;
+
+
+//-------------------------------------------
+//	Fonts
+//-------------------------------------------
+
+
+// FF DIN (http://www.fontfont.com/fonts/din)
+
+
+// Regular
+
+
+@mixin din-regular {
+
+	font-family: "ff-din-web-n4", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-style: normal;	
+
+}
+
+
+// Regular Italic
+
+
+@mixin din-regular-italic {
+
+	font-family: "ff-din-web-i4", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-style: italic;	
+
+}
+
+
+// Medium
+
+
+@mixin din-medium {
+
+	font-family: "ff-din-web-n6", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-style: normal; 	
+
+}
+
+
+// Medium Italic
+
+
+@mixin din-medium-italic {
+
+	font-family: "ff-din-web-i6", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-style: italic;	
+
+}
+
+
+// Bold
+
+
+@mixin din-bold {
+
+	font-family: "ff-din-web-n7", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-style: normal; 	
+
+}
+
+
+// Bold Italic
+
+
+@mixin din-bold-italic {
+
+	font-family: "ff-din-web-i7", "ff-din-web", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-style: normal;	
+
+}
+
+
+//-------------------------------------------
+//	Grid
+//-------------------------------------------
+
+
+$grid-col: 55px;
+$grid-gutter: 43px;
+$grid-num: 12;
+
+$max-page-width: ($grid-col * $grid-num) + ($grid-gutter * ($grid-num - 1));
+
+@mixin percent($col-num: 6, $gutter-num: 4, $context: $max-page-width) {
+
+	width: percentage((($grid-col * $col-num)+($grid-gutter * $gutter-num))/$context);
+
+}
+
+$maxContentWidth: $max-page-width + $grid-gutter;
+
+@mixin wrap {
+
+	max-width: 1193px;
+	margin: 0 auto;
+	padding: 0 30px;
+
+}
+
+// Breakpoints/Queries decided by design
+
+// Use q- format for easy find and replace globally if needed
+
+// $q-320: 320px;
+// $q-400: 400px;
+// $q-600: 600px;
+// $q-1200: 1200px;
+
+
+/*-------------------------------------------
+	General Selectors
+-------------------------------------------*/
+
+
+html {
+
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	border-top: 15px solid $slate-light;
+
+}
+
+body {
+
+	@include font-size(14);
+	line-height: (21/14) + em;
+	@include din-regular;
+	color: $black;
+	background: $white;
+	border-top: 15px solid $slate;
+
+}
+
+/* Block Level */
+
+h1 {
+
+	margin-bottom: 15px;
+	@include font-size(21);
+	line-height: (28/21) + em;
+	@include din-bold;
+	color: $slate;
+
+}
+
+h2 {
+	// margin-bottom: (n/n) + em;
+	// @include font-size(21);
+	// line-height: (25/21) + em;
+	@include din-bold;
+	color: $slate;
+}
+
+h3 {
+	// margin-bottom: (n/n) + em;
+	// @include font-size(18);
+	// line-height: (22/18) + em;
+	@include din-bold;
+	color: $slate;
+}
+
+h4 {
+	// margin-bottom: (n/n) + em;
+	// @include font-size(16);
+	// line-height: (20/16) + em;
+	// text-transform: uppercase;
+	@include din-bold;
+	color: $slate;
+}
+
+h5 {
+	// margin-bottom: (n/n) + em;
+	// @include font-size(14);
+	// line-height: (18/14) + em;
+	@include din-bold;
+	color: $slate;
+}
+
+h6 {
+	// margin-bottom: (n/n) + em;
+	// @include font-size(14);
+	// line-height: (18/14) + em;
+	@include din-bold;
+	color: $slate;
+}
+
+p {
+
+	margin-bottom: 15px;
+
+	&:last-of-type { margin: 0; }
+
+}
+
+ol {
+
+	li {}
+
+}
+
+ul {
+
+	li {}
+
+}
+
+	li {}
+
+dl {}
+
+	dt {}
+
+	dd {}
+
+table {}
+
+th {
+
+	@include din-bold;
+	
+}
+
+td {}
+
+caption {}
+
+figure {}
+
+figcaption {}
+
+blockquote {
+
+	p {}
+
+}
+
+/* Inline */
+
+i,
+em,
+cite {
+
+	@include din-regular-italic;
+	
+}
+
+cite {
+
+	&:before {
+	
+		// content: "— ";
+		
+	}
+	
+}
+
+b,
+strong {
+
+	@include din-bold;
+	
+}
+
+a {
+
+	color: $blue;
+	text-decoration: none;
+
+	&:link {}
+
+	&:hover,
+	&:focus {}
+
+}
+
+img {
+
+	// display: block;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+
+}
+
+code {}
+
+sub, sup {
+
+	// line-height: 0;
+
+}
+
+::-moz-selection {
+
+	color: $black;
+	background: $gray-light;
+	text-shadow: none;
+
+}
+
+::selection {
+
+	color: $black;
+	background: $gray-light;
+	text-shadow: none;
+
+}
+
+ins {
+
+	// color: $black;
+	// background-color: #fcd700;
+	// text-decoration: none;
+
+}
+
+mark {
+
+	// color: $black;
+	// background-color: #fcd700;
+	// font-style: italic;
+	// font-weight: bold;
+
+}
+
+
+// Mozilla doesn't style place holders by default
+
+
+input:-moz-placeholder {}
+
+textarea:-moz-placeholder {}
+
+
+/*-------------------------------------------
+	Forms
+-------------------------------------------*/
+
+
+form {}
+
+fieldset {}
+
+legend {}
+
+label {
+
+	display: block;
+	margin: 0 0 8px 0;
+	@include font-size(12);
+	line-height: (14/12) + em;
+	text-transform: uppercase;
+	color: $slate;
+	
+}
+
+input {
+
+	width: 100%;
+	height: 30px;
+	padding: 0 10px;
+	background: $gray-lighter;
+	border: none;
+	@include font-size(14);
+	line-height: (21/14) + em;
+	@include din-regular;
+
+	&[type="text"],
+	&[type="search"] {}
+
+	&[type="checkbox"] {}
+
+	&[type="radio"] {}
+
+	&[type="button"],
+	&[type="submit"] {}
+
+	// Override general styles applied to iOS devices.
+
+	-webkit-appearance: none;
+
+}
+
+textarea {
+
+	width: 100%;
+	max-width: 100%;
+	min-height: 120px;
+	padding: 10px;
+	background: $gray-lighter;
+	border: none;
+	@include font-size(14);
+	line-height: (21/14) + em;
+	@include din-regular;
+
+	// Override general styles applied to iOS devices.
+
+	-webkit-appearance: none;
+
+}
+
+button {
+
+	width: 100%;
+	height: 40px;
+	padding: 0 20px 0 20px;
+	@include font-size(12);
+	line-height: (14/12) + em;
+	text-align: center;
+	text-transform: uppercase;
+	color: $gray-lighter;
+	@include vertical-gradient($orange-lighter, $orange-light);
+	border: none;
+
+	// Override general styles applied to iOS devices.
+
+	-webkit-appearance: none;
+
+}

@@ -1,0 +1,284 @@
+
+/*-------------------------------------------
+	Header
+-------------------------------------------*/
+
+
+#header {
+
+	background: $gray-lighter;
+
+	.wrap {
+
+		position: relative;
+
+		// On smaller screens, only certain padding is needed.
+
+		padding: 30px 0 0 0;
+
+		@media screen and (min-width: 910px) {
+		
+			padding: 30px 30px 0 30px;
+		
+		}
+
+		.ie-lt9 & {
+		
+			padding: 30px 30px 0 30px;
+		
+		}
+
+	}
+
+}
+
+	// Logo
+
+	#logo {
+
+		padding: 0 0 30px 30px;
+		@include hide-text;
+
+		@media screen and (min-width: 910px) {
+		
+			padding-left: 0;
+		
+		}
+
+		.ie-lt9 & {
+		
+			padding-left: 0;
+		
+		}
+
+		a {
+
+			display: block;
+			width: 201px;
+			height: 64px;
+			background: url(../img/logo-small.png);
+
+			@media screen and (min-width: 910px) {
+			
+				width: 252px;
+				height: 81px;
+				background-image: url(../img/logo.png);
+			
+			}
+
+			.ie-lt9 & {
+			
+				width: 252px;
+				height: 81px;
+				background-image: url(../img/logo.png);
+			
+			}
+
+			@include retina {
+			
+				background-size: 201px 64px;
+				background-image: url(../img/logo-small@2x.png);
+
+				@media screen and (min-width: 910px) {
+				
+					background-size: 252px 81px;
+					background-image: url(../img/logo@2x.png);
+				
+				}
+
+			}
+
+			&:hover {}
+
+		}
+
+	}
+
+	// Primary Navigation
+
+	#nav {
+
+		@media screen and (min-width: 910px) {
+		
+			position: absolute;
+			right: 30px;
+			top: 69px;
+			z-index: 5;
+
+		}
+
+		.ie-lt9 & {
+		
+			position: absolute;
+			right: 30px;
+			top: 69px;
+			z-index: 5;
+		
+		}
+
+		.toggle {
+
+			// Without JavaScript, this is not needed. The enhanced styles will
+			// control the display for this instead.
+
+			display: none;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			width: 30px;
+			height: 30px;
+			background: url(../img/nav-toggle.svg);
+			@include hide-text;
+			cursor: pointer;
+			z-index: 5;
+			
+		}
+
+		ul { @include group; }
+
+			li {
+
+				float: left;
+				width: 50%;
+				margin-bottom: 2px;
+				@include font-size(12);
+				line-height: (14/12) + em;
+				text-align: center;
+				text-transform: uppercase;
+
+				@media screen and (min-width: 910px) {
+				
+					width: auto;
+					margin-left: 30px;
+				
+				}
+
+				@media screen and (min-width: 965px) {
+				
+					margin-left: 40px;
+				
+				}
+
+				.ie-lt9 & {
+				
+					width: auto;
+					margin-left: 40px;
+				
+				}
+
+				// The following gives a 2px gutter between nav items
+				// when viewed on smaller screens.
+
+				&:nth-child(odd) {
+				
+					a { margin-right: 1px; }
+				
+				}
+
+				&:nth-child(even) {
+				
+					a { margin-left: 1px; }
+				
+				}
+
+				&.current,
+				&.current-parent,
+				&.current-menu-item,
+				&.current-menu-parent,
+				&.current_page_item,
+				&.current_page_ancestor,
+				.single-post &#menu-item-390,
+				.single-news &#menu-item-390,
+				.single-projects &#menu-item-386,
+				.single-expertise &#menu-item-384,
+				.single-ownership-team &#menu-item-390 {
+
+					a {
+
+						color: $gray-lighter;
+						@include vertical-gradient($orange-lighter, $orange-light);
+
+						@media screen and (min-width: 910px) {
+						
+							color: $orange;
+							background: none;
+							border-bottom: 1px solid $orange;
+						
+						}
+
+						.ie-lt9 & {
+						
+							color: $orange;
+							background: none;
+							border-bottom: 1px solid $orange;
+						
+						}
+
+					}
+				
+				}
+
+			}
+
+				a {
+
+					display: block;
+					height: 30px;
+					padding: 8px 0 0 0;
+					color: $slate;
+					background: $gray-light;
+
+					@media screen and (min-width: 910px) {
+
+						height: 20px;
+						padding: 3px 2px 0 2px;
+						background: none;
+
+					}
+
+					.ie-lt9 & {
+					
+						height: 20px;
+						padding: 3px 2px 0 2px;
+						background: none;
+					
+					}
+
+					&:hover {
+
+						color: $gray-lighter;
+						@include vertical-gradient($orange-lighter, $orange-light);
+
+						@media screen and (min-width: 910px) {
+
+							color: $slate;
+							background: none;
+							border-bottom: 1px solid $slate;
+						
+						}
+
+						.ie-lt9 & {
+						
+							color: $slate;
+							background: none;
+							border-bottom: 1px solid $slate;
+						
+						}
+
+					}
+					
+				}
+
+		// While navigation is open
+
+		&.active {
+		
+			.toggle {
+			
+				background-position: -30px 0;
+			
+			}
+		
+		}
+
+	}

@@ -1,0 +1,289 @@
+
+/*-------------------------------------------
+	Recent
+-------------------------------------------*/
+
+// Accounts for recent news and blog.
+
+
+#recent {
+
+	background: $gray-lighter;
+
+	.wrap {
+		
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		@media screen and (min-width: 640px) {
+
+			// Begin floating .news and .blog content blocks
+		
+			text-align: justify;
+			@include placeholder;
+		
+		}
+		
+	}
+
+	/* News Articles */
+
+
+	.news {
+
+		margin: 0 0 30px 0;
+
+		@media screen and (min-width: 640px) {
+
+			// Begin floating content block
+
+			display: inline-block;
+			width: 48.10238305384%;
+			margin: 0;
+			text-align: left;
+			vertical-align: top;
+		
+		}
+		
+		.section-header {}
+
+			h2 {
+
+				background: url(news.svg) 10px center no-repeat;
+
+			}
+
+	}
+
+
+	/* Blog Posts */
+
+
+	.blog {
+
+		@media screen and (min-width: 640px) {
+
+			// Begin floating content block
+
+			display: inline-block;
+			width: 48.10238305384%;
+			text-align: left;
+			vertical-align: top;
+
+		}
+
+		.section-header {}
+
+			h2 {
+
+				background: url(blog.svg) 10px center no-repeat;
+
+			}
+
+	}
+
+		.section-header {
+
+			position: relative;
+			margin: 0 0 20px 0;
+			@include vertical-gradient($slate-light, $slate);
+
+			h2 {
+
+				height: 40px;
+				padding: 6px 0 0 50px;
+				@include font-size(16);
+				line-height: (28/16) + em;
+				text-transform: uppercase;
+				@include din-medium;
+				color: $gray-lighter;
+				
+			}
+
+			.more {
+
+				position: absolute;
+				right: 0;
+				top: 0;
+				@include font-size(12);
+				line-height: (17/12) + em;
+				text-transform: uppercase;
+				text-align: center;
+				@include din-medium;
+				@include hide-text;
+
+				@media screen and (min-width: 640px) {
+
+					border-left: 1px solid $gray-lighter;
+					text-indent: 0;
+					white-space: normal;
+					overflow: auto;
+
+				}
+
+				a {
+
+					display: block;
+					width: 30px;
+					height: 40px;
+					color: $gray-lighter;
+					background: url(go-to.svg);
+
+					@media screen and (min-width: 640px) {
+					
+						width: 100px;
+						padding: 11px 0 0 0;
+						background: none;
+				
+					}
+
+					&:hover {}
+					
+				}
+			
+			}
+		
+		}
+
+		.summary {
+
+			/* @todo Need to think about re-doing the layout with thumbnails. Varying text heights with this setup is not working */
+
+			// On small screens, hide the second and third articles
+
+			&:nth-child(2),
+			&:nth-child(3) {
+
+				display: none;
+
+				@media screen and (min-width: 640px) {
+				
+					display: block;
+
+				}
+
+			}
+
+			@media screen and (min-width: 640px) {
+			
+				position: relative;
+				padding: 10px 0 15px 0;
+				border-bottom: 1px solid $gray;
+
+				&:first-of-type {
+				
+					padding-top: 0;
+
+					img {
+					
+						top: 6px;
+					
+					}
+				
+				}
+
+				&:last-of-type {
+				
+					padding-bottom: 0;
+					border: none;
+				
+				}
+
+			}
+
+			@media screen and (min-width: 780px) {
+			
+				position: relative;
+				padding-left: 118px;
+			
+			}
+
+			@media screen and (min-width: 960px) {
+			
+				&:first-of-type {
+
+					footer {
+						
+						top: 6px;
+						
+					}
+					
+				}
+			
+			}
+
+			img {
+
+				// Thumbnails do no display on smaller screens
+
+				display: none;
+
+				@media screen and (min-width: 780px) {
+
+					position: absolute;
+					display: block;
+					left: 0;
+					top: 16px;
+					z-index: 5;
+
+				}
+
+			}
+			
+			h1 {
+
+				margin: 0;
+				@include font-size(18);
+				line-height: (24/18) + em;
+				@include din-regular;
+
+				@media screen and (min-width: 960px) {
+				
+					padding-right: 120px;
+				
+				}
+
+				a {
+
+					color: $orange;
+
+					&:hover {}
+					
+				}
+				
+			}
+			
+			footer {
+				
+				@media screen and (min-width: 960px) {
+
+					position: absolute;
+					right: 0;
+					top: 16px;
+					z-index: 5;
+
+				}
+				
+			}
+
+				time,
+				.author {
+
+					display: block;
+					@include font-size(12);
+					line-height: (17/12) + em;
+					color: $orange;
+					
+				}
+
+			.excerpt {
+
+				margin: 15px 0 0 0;
+				@include font-size(12);
+				line-height: (17/12) + em;
+				
+			}
+
+		}
+
+}

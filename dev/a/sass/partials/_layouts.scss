@@ -1,0 +1,167 @@
+
+/*-------------------------------------------
+	Layouts
+-------------------------------------------*/
+
+
+html {}
+
+body {}
+
+	#header {}
+
+	#content {
+		
+		.wrap {
+
+			padding-top: 30px;
+
+			#projects & {
+			
+				@media screen and (min-width: 460px) {
+				
+					padding-bottom: 0;
+				
+				}
+
+				.ie-lt9 & {
+				
+					padding-bottom: 0;
+				
+				}
+			
+			}
+
+			@media screen and (min-width: 680px) {
+
+				padding-bottom: 30px;
+				@include group;
+
+				#projects & {
+				
+					padding-bottom: 0;
+				
+				}
+
+			}
+
+			.ie-lt9 & {
+			
+				padding-bottom: 30px;
+				@include group;
+			
+			}
+
+			.ie-lt9 #projects & {
+			
+				padding-bottom: 0;
+			
+			}
+
+		}
+		
+	}
+
+		#main {
+
+			@media screen and (min-width: 680px) {
+
+				float: right;
+				width: 65.40158870256%;
+
+				// The layout is reversed on certain pages
+
+				// Home, Contact
+
+				#home &,
+				#contact & {
+				
+					float: left;
+
+				}
+
+				// Full width pages (without #secondary)
+
+				// Projects
+
+				#projects & {
+				
+					float: none;
+					width: auto;
+				
+				}
+
+			}
+
+			.ie-lt9 & {
+			
+				float: right;
+				width: 65.40158870256%;
+			
+			}
+
+			// The layout is reversed on certain pages
+
+			// Home, Contact, Blog, Individual Post
+
+			.ie-lt9 #home &,
+			.ie-lt9 #contact & {
+			
+				float: left;
+
+			}
+
+			// Full width pages (without #secondary)
+
+			// Projects
+
+			.ie-lt9 #projects & {
+			
+				float: none;
+				width: auto;
+			
+			}
+
+		}
+
+		#secondary {
+
+			@media screen and (min-width: 680px) {
+
+				float: left;
+				width: 30.80317740512%;
+
+				// The layout is reversed on certain pages
+
+				// Home, Contact, Blog, Individual Post
+
+				#home &,
+				#contact & {
+				
+					float: right;
+				
+				}
+
+			}
+
+			.ie-lt9 & {
+
+				float: left;
+				width: 30.80317740512%;
+
+			}
+
+			// The layout is reversed on certain pages
+
+			// Home, Contact, Blog, Individual Post
+
+			.ie-lt9 #home &,
+			.ie-lt9 #contact & {
+			
+				float: right;
+			
+			}
+
+		}
+
+	#footer {}
