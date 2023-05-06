@@ -1,0 +1,57 @@
+/*   
+Theme Name: Project Name
+Theme URI: http://projectname.com
+Description: A fancy theme.
+Author: Tune Development
+Author URI: http://tunedevelopment.com
+Version: 1.0
+*/
+
+// Global
+
+@import "partials/reset";
+
+@import "global";
+@import "general";
+ 
+
+/*-------------------------------------------
+   	Partials
+-------------------------------------------*/
+
+@import "partials/header";
+@import "partials/main";
+@import "partials/secondary";
+@import "partials/footer";
+@import "partials/layouts";
+
+
+/*-------------------------------------------
+   	Additional Classes
+-------------------------------------------*/
+
+
+.group { @include group; }
+
+.left {
+	display: block;
+	float: left;
+	margin: 0 15px 15px 0;
+}
+
+.right {
+	display: block;
+	float: right;
+	margin: 0 0 15px 15px;
+}
+
+.upper { text-transform: uppercase; }
+
+.line { display: block; }
+
+.move {
+	position: absolute;
+	left: -9999px;
+	}
+
+.hide { display: none; }
