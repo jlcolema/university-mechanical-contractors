@@ -1,0 +1,559 @@
+<!doctype html>
+
+<html class="no-js">
+
+<head>
+
+	
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+	<meta charset="utf-8" />
+
+	<!--[if IE]>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+	<![endif]-->
+
+	<meta name="robots" content="noindex, nofollow" />
+
+	<title>Home | University Mechanical Contractors</title>
+
+	<meta name="description" content="" />
+
+	<meta name="author" content="" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<meta name="google-site-verification" content="" />
+
+	<link rel="shortcut icon" href="a/img/favicon.png" />
+
+	<link rel="apple-touch-icon" href="a/img/touch-icon.png" />
+
+	<link rel='stylesheet' href='a/css/screen.css'>
+
+	<link rel='stylesheet' href='a/css/print.css'>
+
+	<!--[if IE 10]>
+
+		<link type="text/css" href="/a/css/ie/ie10.css" rel="stylesheet" media="screen, projection" />
+
+	<![endif]-->
+
+	<!--[if IE 9]>
+
+		<link type="text/css" href="/a/css/ie/ie9.css" rel="stylesheet" media="screen, projection" />
+
+	<![endif]-->
+
+	<!--[if IE 8]>
+
+		<link type="text/css" href="/a/css/ie/ie8.css" rel="stylesheet" media="screen, projection" />
+
+	<![endif]-->
+
+	<!--[if IE 7]>
+
+		<link type="text/css" href="/a/css/ie/ie7.css" rel="stylesheet" media="screen, projection" />
+
+	<![endif]-->
+
+	<script type="text/javascript">
+
+		<!--
+
+			document.write('<link type="text/css" href="/a/css/enhanced.css" rel="stylesheet" media="screen, projection" />');
+
+		//-->
+
+	</script>
+
+	<script type="text/javascript" src="//use.typekit.net/zgr5qab.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<script src="a/js/modernizr.js"></script>
+
+	<!--[if lt IE 9]>
+
+		<script src="a/js/selectivizr.js"></script>
+
+	<![endif]-->
+
+	<meta name="twitter:card" content="">
+	<meta name="twitter:site" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:url" content="">
+
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+
+</head>
+
+<body id="home" class="loading">
+
+	<p class="move">
+
+		<a href="#main">Skip to main content.</a>
+
+	</p>
+
+
+
+	<header id="header" role="banner">
+
+	<div class="wrap">
+
+		<div id="logo">
+
+			<a href="/">University Mechanical Contractors</a>
+
+		</div>
+
+		<nav id="nav" role="navigation">
+
+			<div class="toggle">Menu</div>
+
+			<ul>
+
+				<li class="">
+
+					<a href="expertise/index.html">Expertise</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="markets/index.html">Core Markets</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="projects/index.html">Projects</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="resources/index.html">Resources</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="about/index.html">About Us</a>
+
+				</li>
+
+				<li class="">
+
+					<a href="contact/index.html">Contact</a>
+
+				</li>
+
+			</ul>
+
+		</nav>
+
+	</div>
+
+</header>
+
+	<div id="carousel">
+
+	<div class="wrap">
+
+		<div class="flexslider">
+
+			<ul class="slides">
+
+				<li>
+
+					<span data-picture data-alt="Description of image.">
+
+						<span data-src="a/img/carousel/small/01.jpg"></span>
+
+						<span data-src="a/img/carousel/medium/01.jpg" data-media="(min-width: 420px)"></span>
+	
+						<span data-src="a/img/carousel/large/01.jpg" data-media="(min-width: 640px)"></span>
+	
+						<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	
+						<noscript>
+						
+							<img src="a/img/carousel/small/01.jpg" alt="Description of image." />
+						
+						</noscript>
+
+					</span>
+
+				</li>
+
+				<li>
+
+					<span data-picture data-alt="Description of image.">
+				
+						<span data-src="a/img/carousel/small/02.jpg"></span>
+
+						<span data-src="a/img/carousel/medium/02.jpg" data-media="(min-width: 420px)"></span>
+
+						<span data-src="a/img/carousel/large/02.jpg" data-media="(min-width: 640px)"></span>
+	
+						<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	
+						<noscript>
+
+							<img src="a/img/carousel/small/02.jpg" alt="Description of image." />
+						
+						</noscript>
+
+					</span>
+				
+				</li>
+
+				<li>
+
+					<span data-picture data-alt="Description of image.">
+				
+						<span data-src="a/img/carousel/small/03.jpg"></span>
+
+						<span data-src="a/img/carousel/medium/03.jpg" data-media="(min-width: 420px)"></span>
+	
+						<span data-src="a/img/carousel/large/03.jpg" data-media="(min-width: 640px)"></span>
+	
+						<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	
+						<noscript>
+						
+							<img src="a/img/carousel/small/03.jpg" alt="Description of image." />
+						
+						</noscript>
+
+					</span>
+				
+				</li>
+
+			</ul>
+
+		</div>
+
+	</div>
+
+</div>
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<h1 class="page-title">We are University Mechanical Contractors, Inc., and we&rsquo;re here to change your mind.</h1>
+
+			<div id="main" role="main">
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed augue id lacus molestie consequat vitae a orci. Cras pulvinar vulputate odio, nec ultrices ipsum mattis pretium. Praesent tristique mauris sit amet nulla eleifend sodales. Praesent ac enim aliquam justo viverra semper. Proin aliquet egestas lectus, eget luctus nibh sagittis nec. Duis imperdiet quam aliquam eros fringilla pellentesque. Curabitur sit amet turpis eget turpis accumsan eleifend. Nulla facilisi. Nullam ut augue nec justo iaculis laoreet.</p>
+
+				<p>Ut dictum accumsan neque et volutpat. Ut purus nunc, tincidunt vulputate eleifend ultrices, eleifend at diam. Morbi nisi elit, adipiscing ut gravida at, feugiat vel mi. Aliquam nisl nisl, vehicula sit amet sagittis ut, mollis rutrum sem. Integer urna purus, fringilla et blandit sed, viverra vitae enim. Nulla tempor molestie rhoncus. Donec vitae lacus magna, ac fermentum nisl. Morbi et elementum augue. Donec facilisis nisi eu mauris commodo sit amet posuere quam rhoncus. Aliquam sit amet neque vitae orci convallis mollis. Donec nec dignissim sem. Integer scelerisque purus et nisi euismod non egestas felis rhoncus. Proin vel ligula erat, quis tincidunt sapien. Aliquam erat volutpat. Suspendisse potenti. Fusce scelerisque scelerisque diam quis viverra.</p>
+
+				<p>Duis semper varius sapien, hendrerit aliquet augue tempus vel. Curabitur adipiscing bibendum nibh, vestibulum posuere neque lacinia eu. Duis egestas tortor ac justo euismod sit amet cursus arcu pellentesque. Sed vitae dolor eu magna posuere suscipit. Nullam ullamcorper, diam ac commodo placerat, augue nulla viverra libero, in aliquet odio justo a ligula. In consectetur lorem lorem. Curabitur metus velit, mollis vitae rhoncus id, consequat eu sem.</p>
+
+			</div>
+
+			<div id="secondary">
+
+				<div class="factoid">
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="recent">
+
+	<div class="wrap">
+
+		<!-- Recent News Articles -->
+
+		<div class="news">
+
+			<div class="section-header">
+
+				<h2>UMC News</h2>
+
+				<div class="more">
+
+					<a href="#">All News</a>
+
+				</div>
+
+			</div>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="News Headline" />
+
+				<h1>
+
+					<a href="#">News Story Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<time datetime="">12 April 2013</time>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="News Headline" />
+
+				<h1>
+
+					<a href="#">News Story Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<time datetime="">10 April 2013</time>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="News Headline" />
+
+				<h1>
+
+					<a href="#">News Story Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<time datetime="">8 April 2013</time>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+		</div>
+
+		<!-- Recent Blog Posts -->
+
+		<div class="blog">
+
+			<div class="section-header">
+
+				<h2>UMC Blog</h2>
+
+				<div class="more">
+
+					<a href="about/blog/index.html">Entire Blog</a>
+
+				</div>
+
+			</div>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="Blog Headline" />
+
+				<h1>
+
+					<a href="about/blog/article.html">Blog Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<p class="author">by Gail Kinner</p>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="Blog Headline" />
+
+				<h1>
+
+					<a href="about/blog/article.html">Blog Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<p class="author">by Gail Kinner</p>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+			<article class="summary">
+
+				<img src="a/img/thumbnail-placeholder.svg" alt="Blog Headline" />
+
+				<h1>
+
+					<a href="about/blog/article.html">Blog Headline</a>
+
+				</h1>
+
+				<footer>
+
+					<p class="author">by Gail Kinner</p>
+
+				</footer>
+
+				<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+			</article>
+
+		</div>
+
+	</div>
+
+</div>
+
+	<!-- Footer -->
+
+	<footer id="footer" role="contentinfo">
+
+		<div class="wrap">
+
+			<div class="sites">
+
+				<ul>
+
+					<li>
+
+						<a href="#">umccf.org</a>
+
+					</li>
+
+					<li>
+
+						<a href="#">umci.constructionvaults.com</a>
+
+					</li>
+
+					<li>
+
+						<a href="#">pipeline.umci.com</a>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+			<div class="connect">
+
+				<ul>
+
+					<li class="linkedin">
+
+						<a href="#" rel="external">LinkedIn</a>
+
+					</li>
+
+					<li class="twitter">
+
+						<a href="#" rel="external">Twitter</a>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+			<p id="copyright">&copy; 2013 University Mechanical Contractors, Inc. All rights reserved.</p>
+
+		</div>
+
+	</footer>
+
+	<!-- Dev Mode -->
+
+	<div id="dev">
+
+		<div>Dev Mode</div>
+
+		<p>
+			
+			<span class="px"></span>
+			
+			<span class="em"></span>
+			
+		</p>
+
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script>window.jQuery || document.write("<script src='/a/js/jquery.js'>\x3C/script>")</script>
+
+	<script src="a/js/matchmedia.js"></script>
+
+	<script src="a/js/picturefill.js"></script>
+
+	<script src="a/js/flexslider.js"></script>
+
+	<script src="a/js/mixitup.js"></script>
+
+	<script src="a/js/mosaic.js"></script>
+
+	<script src="a/js/enquire.js"></script>
+
+	<!-- General Functions -->
+
+	<script src="a/js/functions.js"></script>
+
+</body>
+
+</html>

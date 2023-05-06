@@ -1,0 +1,33 @@
+<?php get_header(); ?>
+
+	<?php
+	
+		/* Individual */
+	
+	?>
+
+	<?php include (TEMPLATEPATH . "/a/inc/profile.php" ); ?>
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<div id="main" role="main">
+
+				<h1>Title, yes.</h1>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed augue id lacus molestie consequat vitae a orci. Cras pulvinar vulputate odio, nec ultrices ipsum mattis pretium. Praesent tristique mauris sit amet nulla eleifend sodales. Praesent ac enim aliquam justo viverra semper. Proin aliquet egestas lectus, eget luctus nibh sagittis nec. Duis imperdiet quam aliquam eros fringilla pellentesque. Curabitur sit amet turpis eget turpis accumsan eleifend. Nulla facilisi. Nullam ut augue nec justo iaculis laoreet.</p>
+				
+				<p>Ut dictum accumsan neque et volutpat. Ut purus nunc, tincidunt vulputate eleifend ultrices, eleifend at diam. Morbi nisi elit, adipiscing ut gravida at, feugiat vel mi. Aliquam nisl nisl, vehicula sit amet sagittis ut, mollis rutrum sem. Integer urna purus, fringilla et blandit sed, viverra vitae enim. Nulla tempor molestie rhoncus. Donec vitae lacus magna, ac fermentum nisl. Morbi et elementum augue. Donec facilisis nisi eu mauris commodo sit amet posuere quam rhoncus. Aliquam sit amet neque vitae orci convallis mollis. Donec nec dignissim sem. Integer scelerisque purus et nisi euismod non egestas felis rhoncus. Proin vel ligula erat, quis tincidunt sapien. Aliquam erat volutpat. Suspendisse potenti. Fusce scelerisque scelerisque diam quis viverra.</p>
+				
+				<p>Duis semper varius sapien, hendrerit aliquet augue tempus vel. Curabitur adipiscing bibendum nibh, vestibulum posuere neque lacinia eu. Duis egestas tortor ac justo euismod sit amet cursus arcu pellentesque. Sed vitae dolor eu magna posuere suscipit. Nullam ullamcorper, diam ac commodo placerat, augue nulla viverra libero, in aliquet odio justo a ligula. In consectetur lorem lorem. Curabitur metus velit, mollis vitae rhoncus id, consequat eu sem.</p>
+
+			</div>
+
+			<?php get_sidebar(); ?>
+
+		</div>
+
+	</div>
+
+<?php get_footer(); ?>
